@@ -9,8 +9,8 @@ These problems illustrate concepts that previous problems have not emphasized:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -174,6 +174,11 @@ def run_test_problem0a():
 
 
 def problem0a(n):
+
+    if sum_of_digits(n)%2==0:
+        return False
+    else:
+        return True
     """
     What comes in:  An integer.
     What goes out:
@@ -246,6 +251,11 @@ def run_test_problem0b():
 
 
 def problem0b(n):
+    count=0
+    for k in range(2,n+1):
+        if is_prime(k)==True:
+            count=count+1
+    return count
     """
     What comes in:  An integer n >= 2.
     What goes out:
@@ -306,7 +316,13 @@ def run_test_problem0c():
     window2.close_on_mouse_click()
 
 
-def problem0c(circle, n, window):
+def problem0c(circle, n, window,):
+
+    for k in range(n):
+        circle=rg.Circle(rg.Point(circle.center.x+2*circle.radius,circle.center.y),circle.radius)
+        circle.attach_to(window)
+        window.render()
+
     """
     See   problem0c_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
