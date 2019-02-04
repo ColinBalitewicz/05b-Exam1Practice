@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -26,9 +26,8 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #    on it, in class or via Piazza.
 ###############################################################################
 
-import testing_helper
-import time
-
+import math as math
+import testing_helper as testing_helper
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -151,6 +150,10 @@ def run_test_problem1a():
 
 
 def problem1a(m, n):
+    total=0
+    for k in range(m**2,n**2+1):
+        total=total+math.sin(k)
+    return total
     """
     What comes in:  Integers m and n with abs(m) <= abs(n).
     What goes out:
@@ -194,13 +197,25 @@ def run_test_problem1b():
     #    DIFFICULTY:      3
     #    TIME ESTIMATE:   15 minutes.
     # -------------------------------------------------------------------------
-    print()
+
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
-
+    print('Test 1 expected', 2)
+    print('Test 1 actual', problem1b(1, 2))
+    print('Test 2 expected',3)
+    print('Test 2 actual',problem1b(3,3))
+    print('Test 3 expected',5)
+    print('Test 5 actual',problem1b(3,5))
+    print('Test 4 expected',6)
+    print('Test 4 actual',problem1b(3,6))
 
 def problem1b(m, f):
+    count=0
+    for k in range(m,(f*m)+1):
+        if is_prime(k)==True:
+            count=count+1
+    return count
     """
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
