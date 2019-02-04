@@ -317,7 +317,7 @@ def run_test_problem0c():
 
 
 def problem0c(circle, n, window,):
-
+    circle.attach_to(window)
     for k in range(n):
         circle=rg.Circle(rg.Point(circle.center.x+2*circle.radius,circle.center.y),circle.radius)
         circle.attach_to(window)
