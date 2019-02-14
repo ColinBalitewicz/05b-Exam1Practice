@@ -32,7 +32,7 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem3a()
-    #run_test_problem3b()
+    run_test_problem3b()
 
 
 def run_test_problem3a():
@@ -177,6 +177,14 @@ def run_test_problem3b():
 
 
 def problem3b(m, point1):
+    window=rg.RoseWindow(400,650)
+    final_thickness=0
+    for k in range(m):
+        y=problem3a(window,rg.Point(point1.x,point1.y+60),3+2*k)
+        final_thickness=final_thickness+y
+    window.close_on_mouse_click()
+    return final_thickness
+
     """
     See   problem3b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
