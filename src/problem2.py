@@ -155,6 +155,19 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    rect.attach_to(win)
+    win.render()
+    center=rect.get_center()
+    width=rect.get_width()
+    height=rect.get_height()
+    for k in range(n):
+        rectangle=rg.Rectangle(rg.Point(center.x-width/2-delta*k,center.y-height/2-delta*k),rg.Point(center.x+width/2+delta*k,center.y+height/2+delta*k))
+        print(k,rectangle.corner_1,rectangle.corner_2)
+
+
+        rectangle.attach_to(win)
+        win.render()
+
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:

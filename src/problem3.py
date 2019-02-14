@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -32,13 +32,13 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem3a()
-    run_test_problem3b()
+    #run_test_problem3b()
 
 
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # -------------------------------------------------------------------------
@@ -106,7 +106,18 @@ def run_test_problem3a():
 
 
 def problem3a(window, point, n):
-    """
+    total_thick=0
+    for k in range(n):
+        line=rg.Line(rg.Point(point.x+20*k,point.y+10*k),rg.Point(point.x+20*k,point.y+50+10*k))
+        line.attach_to(window)
+        line.thickness = 1 + 2 * k
+        if line.thickness >= 13:
+            line.thickness=13
+
+        total_thick=total_thick+line.thickness
+        window.render()
+    return total_thick
+    """ 
     See   problem3a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
 
@@ -138,7 +149,7 @@ def problem3a(window, point, n):
         :type n:      int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
